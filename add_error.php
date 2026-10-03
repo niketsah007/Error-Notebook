@@ -2,7 +2,7 @@
 include 'db.php';
 
 // ⚠️ PASTE YOUR GOOGLE AI STUDIO API KEY HERE
-$GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; 
+$GEMINI_API_KEY = "YOUR_GEMINNI_API_KEY"; 
 
 function askGeminiToSolve($questionText, $imagePath, $apiKey) {
     if (empty($apiKey) || $apiKey == "Your Api Key") {
@@ -13,7 +13,7 @@ function askGeminiToSolve($questionText, $imagePath, $apiKey) {
     
     $prompt = "You are an expert exam tutor. I am providing a question via text, an image, or both.\n";
     $prompt .= "1. Provide a detailed, step-by-step solution to the problem.\n";
-    $prompt .= "2. Categorize the type of problem/concept (e.g., 'Algebra', 'Syllogism', 'Physics - Motion', 'Calculation Error').\n";
+    $prompt .= "2. Categorize the type of problem/concept (e.g., 'Algebra', 'Syllogism', 'Physics - Motion', 'Calculation Error', 'Grammar - Error Spotting', 'Reading Comprehension').\n";
     $prompt .= "Respond EXACTLY in this JSON format and nothing else: {\"category\": \"The Category\", \"solution\": \"The Step-by-Step Solution\"}";
     
     if (!empty($questionText)) {
@@ -140,7 +140,7 @@ if(isset($_POST['submit'])) {
                 <div>
                     <label class="block text-sm font-medium text-slate-700">Subject</label>
                     <select name="subject" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm p-2 border focus:ring-indigo-500 focus:border-indigo-500">
-                        <option>Maths</option><option>Reasoning</option><option>General Science</option><option>Computer Knowledge</option>
+                        <option>Maths</option><option>Reasoning</option><option>General Science</option><option>Computer Knowledge</option><option>English</option>
                     </select>
                 </div>
                 <div>
